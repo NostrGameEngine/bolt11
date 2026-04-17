@@ -1,0 +1,25 @@
+[versions]
+junit = "4.13.2"
+jakarta-annotation = "2.1.1"
+spotless = "7.0.2"
+gradle-nexus-publish = "2.0.0"
+nge-platform = "0.2.0"
+nge-platform-snapshot = "0.3.0-SNAPSHOT"
+bech32 = "1.0.0-SNAPSHOT"
+bech32-snapshot = "1.0.0-SNAPSHOT"
+jackson = "2.17.2"
+
+[libraries]
+junit = { module = "junit:junit", version.ref = "junit" }
+jakarta-annotation-api = { module = "jakarta.annotation:jakarta.annotation-api", version.ref = "jakarta-annotation" }
+nge-platform-jvm = { module = "org.ngengine:nge-platform-jvm", version.ref = "nge-platform" }
+nge-platform-jvm-snapshot = { module = "org.ngengine:nge-platform-jvm", version.ref = "nge-platform-snapshot" }
+nge-platform-common = { module = "org.ngengine:nge-platform-common", version.ref = "nge-platform" }
+nge-platform-common-snapshot = { module = "org.ngengine:nge-platform-common", version.ref = "nge-platform-snapshot" }
+bech32 = { module = "org.ngengine:bech32", version.ref = "bech32" }
+bech32-snapshot = { module = "org.ngengine:bech32", version.ref = "bech32-snapshot" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+
+[plugins]
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+gradle-nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "gradle-nexus-publish" }
