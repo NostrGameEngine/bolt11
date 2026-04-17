@@ -5,8 +5,8 @@ spotless = "7.0.2"
 gradle-nexus-publish = "2.0.0"
 nge-platform = "0.2.0"
 nge-platform-snapshot = "0.3.0-SNAPSHOT"
-bech32 = "1.0.0-SNAPSHOT"
-bech32-snapshot = "1.0.0-SNAPSHOT"
+bech32 = "1.2.0"
+bech32-snapshot = "1.2.0"
 jackson = "2.17.2"
 
 [libraries]

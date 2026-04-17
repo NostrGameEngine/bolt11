@@ -49,9 +49,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import org.ngengine.bech32.Bech32;
+import org.ngengine.bech32.Bech32ChecksumVariant;
 import org.ngengine.bech32.Bech32EncodingException;
 import org.ngengine.bech32.Bech32Exception;
-import org.ngengine.bech32.ChecksumVariant;
 import org.ngengine.platform.NGEPlatform;
 import org.ngengine.platform.NGEUtils;
 import org.ngengine.platform.secp256k1.Secp256k1RecoverableSignature;
@@ -356,7 +356,7 @@ public final class Bolt11 {
                 ByteBuffer decoded = Bech32.bech32Decode(
                     result.getWords(),
                     -1,
-                    new ChecksumVariant(),
+                    new Bech32ChecksumVariant(),
                     Bech32.DataFormat.BITS_5
                 );
                 words = Bolt11WireUtils.unsignedByteBufferToList(decoded);
@@ -510,7 +510,7 @@ public final class Bolt11 {
             throw new IllegalArgumentException("Not a proper lightning payment request");
         }
 
-        ChecksumVariant variant = new ChecksumVariant();
+        Bech32ChecksumVariant variant = new Bech32ChecksumVariant();
         ByteBuffer decodedData = Bech32.bech32Decode(paymentRequest, -1, variant, Bech32.DataFormat.BITS_5);
         paymentRequest = paymentRequest.toLowerCase(Locale.ROOT);
         String prefix = new String(Bech32.hrp(paymentRequest), StandardCharsets.UTF_8);

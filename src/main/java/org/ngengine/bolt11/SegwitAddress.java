@@ -36,10 +36,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import org.ngengine.bech32.Bech32;
+import org.ngengine.bech32.Bech32ChecksumVariant;
 import org.ngengine.bech32.Bech32EncodingException;
 import org.ngengine.bech32.Bech32Exception;
 import org.ngengine.bech32.Bech32m;
-import org.ngengine.bech32.ChecksumVariant;
 
 final class SegwitAddress {
 
@@ -95,7 +95,7 @@ final class SegwitAddress {
         if (address.length() > MAX_BECH32_ADDRESS_LENGTH) {
             throw new IllegalArgumentException("Bech32 address is too long");
         }
-        ChecksumVariant variant = new ChecksumVariant();
+        Bech32ChecksumVariant variant = new Bech32ChecksumVariant();
         ByteBuffer decodedData = Bech32.bech32Decode(address, -1, variant, Bech32.DataFormat.BITS_5);
         List<Integer> decodedWords = Bolt11WireUtils.unsignedByteBufferToList(decodedData);
         if (decodedWords.isEmpty()) {
@@ -112,7 +112,7 @@ final class SegwitAddress {
             throw new IllegalArgumentException("Invalid witness program length");
         }
 
-        boolean isBech32m = variant.getVariant() == ChecksumVariant.BECH32M_CONST;
+        boolean isBech32m = variant.getVariant() == Bech32ChecksumVariant.BECH32M_CONST;
         if (version == 0 && isBech32m) {
             throw new IllegalArgumentException("Invalid segwit v0 encoding");
         }
