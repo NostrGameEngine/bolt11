@@ -77,15 +77,4 @@ jobs:
         name: build-artifacts
         path: dist
 
-    - name: Upload pages artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: 'dist/javadoc/lnurl4j'
 
-    - name: Deploy to GitHub Pages
-      if: github.event_name == 'release'  
-      id: deployment
-      uses: actions/deploy-pages@v4
-      
- 
- 
