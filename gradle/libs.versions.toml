@@ -1,6 +1,6 @@
 [versions]
 bech32Snapshot = "1.2.1"
-ngePlatformSnapshot = "0.2.4"
+ngePlatformSnapshot = "0.3.0-SNAPSHOT"
 bech32 = "1.2.1"
 ngePlatform = "0.2.4"
 gradleNexusPublish = "2.0.0"
