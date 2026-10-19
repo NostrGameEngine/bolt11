@@ -2,7 +2,7 @@
 bech32Snapshot = "1.2.1"
 ngePlatformSnapshot = "0.3.0-SNAPSHOT"
 bech32 = "1.2.1"
-ngePlatform = "0.2.5"
+ngePlatform = "0.2.6"
 gradleNexusPublish = "2.0.0"
 jackson = "2.17.2"
 jakartaAnnotation = "2.1.1"
